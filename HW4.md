@@ -1,10 +1,10 @@
 # Facebook粉絲團分析（朱立倫)
-### 讀取facebook 資料
+## 讀取facebook 資料
 if (!require('Rfacebook')){
   install.packages("Rfacebook")
   library(Rfacebook)
 }
-token<-'CAACEdEose0cBAHGrME31kF8LHlmsWdZBpJtSO5GsKZBmxrVkNQknhjWAKyNAhKkIuhNHlPbLweSNNw4P75w2ZBTEpeliOeum8h6cPDUOuHo2gqgUdMBS6Xc8ZAq5aoAtgP1gZCAN6zAtbQ1SukZBJoqsCc3IQ0YkrEAbmWjZCZANKUZAw9xdLuTskLWQqkHuJtj1j972HAblY6k4m6ZBwoyW2c'
+token<-'EAACEdEose0cBAA0ZAHnNHLJ47NkYplT0jZC7ZBkz7v5Ib8hhYKYjwLQALWvT4az6Q8BIFIQUL1vbcFrJjyOio2QpaZCp0jqZBTTWmzJP56FZAacDiuMmRVRMUCH5ZBLA7ZAHwLE39TTrNRWZA3kiuKldIr1odEYm7jXQGqgBfhisqfQZDZD'
 totalPage<-NULL
 lastDate<-Sys.Date()
 DateVectorStr<-as.character(seq(as.Date("2016-01-01"),lastDate,by="5 days"))
