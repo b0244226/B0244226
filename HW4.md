@@ -14,7 +14,7 @@ for(i in 1:(length(DateVectorStr)-1)){
   totalPage<-rbind(totalPage,tempPage)
 }
 nrow(totalPage)
-#¨C¤éµo¤å¼Æ¤ÀªR
+#每日發文數分析
 totalPage$datetime <- as.POSIXct(totalPage$created_time, 
                                  format = "%Y-%m-%dT%H:%M:%S+0000", 
                                  tz = "GMT") #2016-01-16T15:05:36+0000
@@ -24,7 +24,7 @@ totalPage$weekdays <-weekdays(as.Date(totalPage$dateTPE))
 PostCount<-aggregate(id~dateTPE,totalPage,length)
 library(knitr)
 kable(head(PostCount[order(PostCount$id,decreasing = T),]))
-#¨C¤élikes¼Æ¤ÀªR
+#每日likes數分析
 totalPage$datetime <- as.POSIXct(totalPage$created_time, 
                                  format = "%Y-%m-%dT%H:%M:%S+0000", 
                                  tz = "GMT") #2016-01-16T15:05:36+0000
@@ -34,7 +34,7 @@ totalPage$weekdays <-weekdays(as.Date(totalPage$dateTPE))
 PostCount<-aggregate(likes_count~dateTPE,totalPage,mean)
 library(knitr)
 kable(head(PostCount[order(PostCount$likes_count,decreasing = T),]))
-#¨C¤écomments¼Æ¤ÀªR
+#每日comments數分析
 totalPage$datetime <- as.POSIXct(totalPage$created_time, 
                                  format = "%Y-%m-%dT%H:%M:%S+0000", 
                                  tz = "GMT") #2016-01-16T15:05:36+0000
@@ -44,7 +44,7 @@ totalPage$weekdays <-weekdays(as.Date(totalPage$dateTPE))
 CommentCount<-aggregate(comments_count~dateTPE,totalPage,mean)
 library(knitr)
 kable(head(CommentCount[order(CommentCount$comments_count,decreasing = T),]))
-#¨C¤éshares¼Æ¤ÀªR
+#每日shares數分析
 totalPage$datetime <- as.POSIXct(totalPage$created_time, 
                                  format = "%Y-%m-%dT%H:%M:%S+0000", 
                                  tz = "GMT") #2016-01-16T15:05:36+0000
